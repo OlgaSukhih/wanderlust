@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wanderlust</title>
+<style>
+:root{--ink:#25343a;--muted:#66777b;--paper:#fbf8f1;--card:#fffdf8;--sage:#9fb8a5;--sage2:#dce8df;--terr:#c9785d;--sand:#ead9bd;--blue:#779ba3;--line:#d8d3c8;--good:#39735a;--bad:#a74f45}
+*{box-sizing:border-box} body{margin:0;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background-color:var(--paper);background-image:linear-gradient(rgba(90,115,105,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(90,115,105,.055) 1px,transparent 1px);background-size:30px 30px;font-size:19px;line-height:1.65}
+.wrap{width:min(1050px,calc(100% - 28px));margin:auto;padding:32px 0 70px}.hero{padding:48px 42px 38px;border:2px solid var(--ink);background:var(--card);box-shadow:8px 8px 0 var(--sand);position:relative;overflow:hidden}.hero:after{content:"✈";position:absolute;right:30px;top:10px;font-size:88px;color:rgba(119,155,163,.15);transform:rotate(12deg)}h1{font-family:Georgia,serif;font-size:clamp(46px,8vw,78px);margin:0;letter-spacing:-2px}.sub{font-size:20px;color:var(--muted);margin-top:6px}.route{margin-top:24px;font-family:Georgia,serif;font-style:italic;font-size:21px;color:#52676a}
+section{margin-top:38px}.section-title{font-family:Georgia,serif;font-size:34px;margin:0 0 17px}.story{background:var(--card);border:1px solid var(--line);padding:30px;border-radius:18px;box-shadow:0 10px 30px rgba(38,52,58,.06);font-size:21px}.target{background:linear-gradient(transparent 58%,#f0c9b8 58%);font-weight:800;cursor:pointer}.hint{font-size:15px;color:var(--muted);margin-top:16px}.word-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:22px}.word-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:21px;position:relative}.word{font-family:Georgia,serif;font-size:28px;font-weight:700}.ipa{color:var(--muted);font-size:16px}.ru{font-weight:750;margin:9px 0 5px;color:#884f3e}.ex{font-size:17px;color:#46585c}.audio{border:0;background:var(--sage2);color:var(--ink);font-size:18px;padding:10px 14px;border-radius:999px;cursor:pointer;margin-top:12px;font-weight:700}.audio:hover{filter:brightness(.96)}
+.task{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;margin:20px 0}.task h3{font-family:Georgia,serif;font-size:27px;margin:0 0 8px}.instruction{color:var(--muted);margin:0 0 20px}.q{padding:14px 0;border-bottom:1px dashed var(--line)}.q:last-child{border:0}.options{display:flex;flex-wrap:wrap;gap:9px;margin-top:9px}.choice,.check,.reveal{font:inherit;border:1px solid #b9c6c0;background:white;border-radius:12px;padding:9px 13px;cursor:pointer}.choice.selected{background:var(--sage2);border-color:#7f9f8a}.choice.correct{background:#dcefe3;border-color:#6c9a7d}.choice.wrong{background:#f6dcd6;border-color:#c77a69}.check{background:var(--ink);color:white;border-color:var(--ink);font-weight:750;margin-top:18px}.feedback{font-weight:750;margin-top:12px}.good{color:var(--good)}.bad{color:var(--bad)}select,input,textarea{font:inherit;font-size:18px;border:1.5px solid #aebbb7;border-radius:10px;background:white;color:var(--ink);padding:10px 12px}select{min-width:180px}textarea{width:100%;min-height:110px;resize:vertical;margin-top:8px}.gap{width:190px;max-width:100%}.prompt-box{background:#f3eee3;border-left:5px solid var(--terr);padding:18px 20px;border-radius:0 13px 13px 0;margin:14px 0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.chip{background:var(--sage2);padding:7px 11px;border-radius:999px;font-size:16px;font-weight:700}.scenario{border:1px solid var(--line);padding:18px;border-radius:14px;margin:13px 0;background:#fff}.stem{font-weight:800;color:#765344}.reveal{background:#f3eee3;margin-top:8px}.answer{display:none;margin-top:9px;color:#52676a;font-style:italic}.final{background:#26383c;color:#f9f4e8}.final h3,.final .instruction{color:#f9f4e8}.final textarea{background:#fffdf8}.final .chips .chip{background:#d9e5df;color:#26383c}
+@media(max-width:700px){body{font-size:18px}.wrap{width:min(100% - 18px,1050px);padding-top:16px}.hero{padding:30px 21px 27px;box-shadow:5px 5px 0 var(--sand)}.hero:after{font-size:55px;right:12px}.word-grid{grid-template-columns:1fr}.story,.task{padding:20px}.story{font-size:19px}.section-title{font-size:30px}.task h3{font-size:25px}.choice,.check,.reveal{font-size:17px;padding:10px 12px}select,input,textarea{font-size:17px;width:100%;margin-top:7px}.q{padding:15px 0}.options{display:grid;grid-template-columns:1fr}.choice{text-align:left}.word{font-size:27px}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="hero"><h1>Wanderlust</h1><div class="sub">Seven words for stories that refuse to stay in one place.</div><div class="route">Lisbon → Tangier → nowhere on the original itinerary</div></header>
+
+<section><h2 class="section-title">The story</h2><div class="story">
+Maya had always suffered from <span class="target" data-word="wanderlust">wanderlust</span>, but this time she promised herself she would take a perfectly ordinary two-week holiday in Lisbon. On her third evening, however, she met an elderly photographer called Elias who claimed that his backpack had been <span class="target" data-word="abducted">abducted</span> — his word, not hers — by a monkey during a trip years earlier. Maya laughed, assuming he was trying to <span class="target" data-word="feign">feign</span> seriousness, but Elias produced a photograph of the animal disappearing across a roof with the bag.
+<br><br>
+The strange travel stories began to <span class="target" data-word="pile up">pile up</span>. A missed ferry. A night in a desert village. A passport found inside a loaf of bread. By midnight, one idea had <span class="target" data-word="embedded">embedded</span> itself in Maya's mind: perhaps the best journeys were the ones that went wrong. The next morning, instead of following her itinerary, she bought a ticket to Tangier.
+<br><br>
+At the port, a man tried to sell her an absurdly expensive “official” tour. She managed to <span class="target" data-word="dodge">dodge</span> him by pretending to receive an urgent phone call. Then her bank blocked her card after the unexpected border crossing, so she had to <span class="target" data-word="withdraw">withdraw</span> cash from the only ATM she could find. Standing there with no hotel booking, no working card and almost no plan, Maya realised she was happier than she had been in months.
+<div class="hint">Tap any highlighted expression to hear it.</div></div></section>
+
+<section><h2 class="section-title">Words in the journey</h2><div class="word-grid" id="cards"></div></section>
+
+<section><h2 class="section-title">Practice</h2>
+<div class="task" id="t1"><h3>1. Meaning instinct</h3><p class="instruction">Choose the expression that fits each situation best.</p><div id="mc"></div><button class="check" onclick="checkMC()">Check</button><div class="feedback" id="mcFb"></div></div>
+
+<div class="task" id="t2"><h3>2. Complete the travel diary</h3><p class="instruction">Choose the best word. Change the form if necessary.</p><div class="chips"><span class="chip">wanderlust</span><span class="chip">feign</span><span class="chip">abduct</span><span class="chip">pile up</span><span class="chip">embed</span><span class="chip">dodge</span><span class="chip">withdraw</span></div><div id="gaps"></div><button class="check" onclick="checkGaps()">Check</button><div class="feedback" id="gapFb"></div></div>
+
+<div class="task"><h3>3. Upgrade the sentence</h3><p class="instruction">Replace the simple wording with one target expression. Say the new sentence aloud before revealing the model.</p>
+<div class="scenario">I have a very strong desire to travel again after seeing my friend's photos.<br><button class="reveal" onclick="reveal(this)">Model</button><div class="answer">Those photos have given me a serious case of <b>wanderlust</b>.</div></div>
+<div class="scenario">He pretended to be confident, although he was terrified of flying.<br><button class="reveal" onclick="reveal(this)">Model</button><div class="answer">He <b>feigned</b> confidence, although he was terrified of flying.</div></div>
+<div class="scenario">Problems kept accumulating after our flight was cancelled.<br><button class="reveal" onclick="reveal(this)">Model</button><div class="answer">Problems started to <b>pile up</b> after our flight was cancelled.</div></div>
+<div class="scenario">I managed to avoid the tourist trap by taking a side street.<br><button class="reveal" onclick="reveal(this)">Model</button><div class="answer">I managed to <b>dodge</b> the tourist trap by taking a side street.</div></div>
+</div>
+
+<div class="task"><h3>4. What happened next?</h3><p class="instruction">Continue each mini-story for 30–45 seconds. Use the expressions shown.</p>
+<div class="prompt-box"><b>Your suitcase has disappeared at a tiny airport.</b><div class="chips"><span class="chip">pile up</span><span class="chip">feign</span><span class="chip">withdraw</span></div><span class="stem">Start:</span> At first, I thought it was just a minor problem, but...</div>
+<div class="prompt-box"><b>You take a spontaneous trip without telling anyone.</b><div class="chips"><span class="chip">wanderlust</span><span class="chip">dodge</span><span class="chip">embed</span></div><span class="stem">Start:</span> The idea had been embedded in my mind for weeks...</div>
+<div class="prompt-box"><b>A bizarre travel story appears online.</b><div class="chips"><span class="chip">abduct</span><span class="chip">feign</span><span class="chip">pile up</span></div><span class="stem">Start:</span> Nobody believed the headline at first...</div>
+</div>
+
+<div class="task"><h3>5. Would you rather?</h3><p class="instruction">Choose one option and justify your answer. Try to use at least two target expressions in every answer.</p>
+<div class="q"><b>A.</b> Follow a perfect itinerary OR let your plans change completely?</div>
+<div class="q"><b>B.</b> Lose your phone abroad OR have your bank card suddenly blocked?</div>
+<div class="q"><b>C.</b> Travel with someone who worries about everything OR someone who constantly takes risks?</div>
+<div class="q"><b>D.</b> Spend a month in one unfamiliar city OR visit seven countries in a month?</div>
+</div>
+
+<div class="task"><h3>6. Truth, lie or travel legend?</h3><p class="instruction">Invent three short travel statements: two believable and one ridiculous. Include at least four target expressions. Your partner must identify the lie.</p><div class="chips"><span class="chip">wanderlust</span><span class="chip">feign</span><span class="chip">abduct</span><span class="chip">pile up</span><span class="chip">embed</span><span class="chip">dodge</span><span class="chip">withdraw</span></div><textarea placeholder="1. ...\n2. ...\n3. ..."></textarea></div>
+
+<div class="task final"><h3>7. One-minute story</h3><p class="instruction">You have 60 seconds. Tell a story beginning with the line below. Use at least five target expressions naturally.</p><div class="prompt-box" style="color:#26383c"><b>“I only meant to stay for one night.”</b></div><div class="chips"><span class="chip">wanderlust</span><span class="chip">feign</span><span class="chip">abduct</span><span class="chip">pile up</span><span class="chip">embed</span><span class="chip">dodge</span><span class="chip">withdraw</span></div><textarea placeholder="Plan your story here if you need to..."></textarea></div>
+</section></main>
+<script>
+const words=[
+{w:'wanderlust',ipa:'/ˈwɒn.də.lʌst/',ru:'страсть к путешествиям, тяга к странствиям',ex:'After six months at home, her wanderlust became impossible to ignore.'},
+{w:'feign',ipa:'/feɪn/',ru:'притворяться, изображать; симулировать',ex:'He feigned surprise even though he had planned the whole trip.'},
+{w:'abduct',ipa:'/əbˈdʌkt/',ru:'похищать, насильно увозить',ex:'In the novel, a journalist is abducted while travelling abroad.'},
+{w:'pile up',ipa:'/paɪl ʌp/',ru:'накапливаться; нагромождаться',ex:'Small problems began to pile up after they missed the last train.'},
+{w:'embed',ipa:'/ɪmˈbed/',ru:'внедрять; прочно закреплять, укоренять',ex:'The experience embedded one idea in her mind: travel slowly.'},
+{w:'dodge',ipa:'/dɒdʒ/',ru:'уклоняться, избегать; увернуться',ex:'We dodged the crowds by visiting the old town early in the morning.'},
+{w:'withdraw',ipa:'/wɪðˈdrɔː/',ru:'снимать деньги; отводить, отзывать; отступать',ex:'I had to withdraw some cash because the café did not accept cards.'}
+];
+const cards=document.getElementById('cards');
+words.forEach(x=>cards.innerHTML+=`<article class="word-card"><div class="word">${x.w}</div><div class="ipa">${x.ipa}</div><div class="ru">${x.ru}</div><div class="ex">${x.ex}</div><button class="audio" onclick="speak('${x.w.replace("'","\\'")}')">🔊 Listen</button></article>`);
+function speak(text){if(!('speechSynthesis'in window))return; speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-GB';u.rate=.82;speechSynthesis.speak(u)}
+document.querySelectorAll('.target').forEach(el=>el.addEventListener('click',()=>speak(el.dataset.word)));
+const mcData=[
+['You smile and pretend to be calm while your passport is missing.','feign',['withdraw','feign','embed']],
+['After three delayed flights, hotel trouble and lost luggage, the problems continue accumulating.','pile up',['dodge','pile up','abduct']],
+['You avoid an aggressive street seller without confronting him.','dodge',['wanderlust','dodge','withdraw']],
+['A powerful desire to see unfamiliar places keeps returning.','wanderlust',['wanderlust','embed','feign']],
+['An idea becomes deeply fixed in your memory.','embed',['abduct','withdraw','embed']],
+['You take cash out of your bank account at an ATM.','withdraw',['withdraw','pile up','dodge']],
+['Someone is taken away illegally by force.','abduct',['feign','abduct','wanderlust']]
+];
+let picks={}; const mc=document.getElementById('mc'); mcData.forEach((q,i)=>{mc.innerHTML+=`<div class="q"><b>${i+1}.</b> ${q[0]}<div class="options">${q[2].map(o=>`<button class="choice" data-i="${i}" data-v="${o}" onclick="pick(this)">${o}</button>`).join('')}</div></div>`});
+function pick(b){document.querySelectorAll(`[data-i="${b.dataset.i}"]`).forEach(x=>x.classList.remove('selected'));b.classList.add('selected');picks[b.dataset.i]=b.dataset.v}
+function checkMC(){let n=0;mcData.forEach((q,i)=>{document.querySelectorAll(`[data-i="${i}"]`).forEach(b=>{b.classList.remove('correct','wrong');if(b.dataset.v===q[1])b.classList.add('correct');else if(b.classList.contains('selected'))b.classList.add('wrong')});if(picks[i]===q[1])n++});let f=document.getElementById('mcFb');f.textContent=`${n}/7 correct`;f.className='feedback '+(n===7?'good':'bad')}
+const gapData=[
+['By the end of winter, my ________ was so strong that I booked a flight without much planning.','wanderlust'],
+['She tried to ________ interest in the guided tour, but everyone could see she was bored.','feign'],
+['Minor delays started to ________, and eventually we missed our connection.','pile up'],
+['That first solo trip ________ a sense of independence in me.','embedded'],
+['We managed to ________ the enormous queue by arriving before sunrise.','dodge'],
+['I needed to ________ some cash before heading into the mountains.','withdraw'],
+['In the thriller, two tourists are ________ and taken across the border.','abducted']
+];
+const opts=['','wanderlust','feign','abducted','pile up','embedded','dodge','withdraw'];let gaps=document.getElementById('gaps');gapData.forEach((g,i)=>{gaps.innerHTML+=`<div class="q"><b>${i+1}.</b> ${g[0].replace('________',`<select id="g${i}">${opts.map(o=>`<option value="${o}">${o||'choose...'}</option>`).join('')}</select>`)}</div>`});
+function checkGaps(){let n=0;gapData.forEach((g,i)=>{let s=document.getElementById('g'+i);s.style.borderColor=s.value===g[1]?'#6c9a7d':'#c77a69';if(s.value===g[1])n++});let f=document.getElementById('gapFb');f.textContent=`${n}/7 correct`;f.className='feedback '+(n===7?'good':'bad')}
+function reveal(b){b.nextElementSibling.style.display='block';b.style.display='none'}
+</script></body></html>
